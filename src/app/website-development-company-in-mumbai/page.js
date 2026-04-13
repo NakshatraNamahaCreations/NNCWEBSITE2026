@@ -5,8 +5,8 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Website Development Company in Mumbai | Nakshatra Namaha Creations',
-  description: 'Top website development company in Mumbai. Custom React JS & Next JS websites — PageSpeed 90+ guaranteed, fixed price, zero outsourcing. Walk-in Mumbai office. 565+ projects since 2015. Call +91 99005 66466.',
+  title: 'Website Development Company in Mumbai | Professional Website',
+  description: 'NNC is the Best website development company in Mumbai to build fast and scalable websites, we deliver modern design and business focused solutions.',
   alternates: { canonical: `${SITE.url}/website-development-company-in-mumbai` },
   keywords: [
     'website development company in mumbai',
@@ -31,8 +31,8 @@ export const metadata = {
     'web design agency mumbai',
   ].join(', '),
   openGraph: {
-    title: 'Website Development Company in Mumbai | Nakshatra Namaha Creations',
-    description: 'Custom React JS & Next JS websites for Mumbai businesses. PageSpeed 90+ guaranteed, fixed price. Walk-in office at Thane West. 565+ projects delivered.',
+    title: 'Website Development Company in Mumbai | Professional Website',
+    description: 'NNC is the Best website development company in Mumbai to build fast and scalable websites, we deliver modern design and business focused solutions.',
     url: `${SITE.url}/website-development-company-in-mumbai`,
     type: 'website',
     locale: 'en_IN',
@@ -42,8 +42,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Website Development Company in Mumbai | Nakshatra Namaha Creations',
-    description: 'Custom React JS & Next JS websites in Mumbai. PageSpeed 90+ guaranteed. Walk-in office.',
+    title: 'Website Development Company in Mumbai | Professional Website',
+    description: 'NNC is the Best website development company in Mumbai to build fast and scalable websites, we deliver modern design and business focused solutions.',
   },
 }
 

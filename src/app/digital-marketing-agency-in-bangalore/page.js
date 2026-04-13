@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Digital Marketing Agency in Bangalore | NNC Digital',
+  title: 'Digital Marketing Agency in Bangalore | Online Marketing',
   description:
-    'Top digital marketing agency in Bangalore. Digital marketing company, digital marketing services, best digital marketing agency, top digital marketing company, digital marketing experts, online marketing agency, performance marketing agency, lead generation agency & digital marketing consultants for Bangalore businesses. Fixed price.',
+    'NNC is a digital marketing agency in Bangalore offering online marketing services to boost visibility, generate quality leads, and grow your business.',
   alternates: {
     canonical: `${SITE.url}/digital-marketing-agency-in-bangalore`,
   },
   keywords:
     'digital marketing agency in bangalore, digital marketing company bangalore, digital marketing services bangalore, best digital marketing agency bangalore, top digital marketing company bangalore, digital marketing experts bangalore, online marketing agency bangalore, performance marketing agency bangalore, lead generation agency bangalore, digital marketing consultants bangalore',
   openGraph: {
-    title: 'Digital Marketing Agency in Bangalore | NNC Digital',
+    title: 'Digital Marketing Agency in Bangalore | Online Marketing',
     description:
-      'Digital marketing agency in Bangalore — digital marketing services, performance marketing, lead generation, SEO, Google Ads & digital marketing consultants for Bangalore businesses.',
+      'NNC is a digital marketing agency in Bangalore offering online marketing services to boost visibility, generate quality leads, and grow your business.',
     url: `${SITE.url}/digital-marketing-agency-in-bangalore`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Digital Marketing Agency in Bangalore | NNC Digital',
+    title: 'Digital Marketing Agency in Bangalore | Online Marketing',
     description:
-      'Digital marketing agency in Bangalore — SEO, Google Ads, performance marketing, lead generation & digital marketing consultants. Fixed price.',
+      'NNC is a digital marketing agency in Bangalore offering online marketing services to boost visibility, generate quality leads, and grow your business.',
     images: [SITE.teamPhoto],
   },
 }

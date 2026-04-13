@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: '2D Animation Studio in Bangalore | NNC Digital',
+  title: '2D Animation Studio in Bangalore | Animated Video Services',
   description:
-    'Top 2D animation studio in Bangalore. 2D animation company, explainer video company, animated explainer videos, character animation studio, whiteboard animation, motion graphics company, animation services & product explainer video for Bangalore businesses. Fixed price.',
+    'We are a trusted 2D animation studio in Bangalore creating engaging animated videos for brands, products, marketing and business communication.',
   alternates: {
     canonical: `${SITE.url}/2d-animation-studio-in-bangalore`,
   },
   keywords:
     '2d animation studio in bangalore, 2d animation company bangalore, explainer video company bangalore, animated explainer videos bangalore, character animation studio bangalore, whiteboard animation bangalore, motion graphics company bangalore, animation services bangalore, product explainer video bangalore',
   openGraph: {
-    title: '2D Animation Studio in Bangalore | NNC Digital',
+    title: '2D Animation Studio in Bangalore | Animated Video Services',
     description:
-      '2D animation studio in Bangalore — explainer videos, animated explainer videos, character animation, whiteboard animation, motion graphics & product explainer videos. Fixed price.',
+      'We are a trusted 2D animation studio in Bangalore creating engaging animated videos for brands, products, marketing and business communication.',
     url: `${SITE.url}/2d-animation-studio-in-bangalore`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: '2D Animation Studio in Bangalore | NNC Digital',
+    title: '2D Animation Studio in Bangalore | Animated Video Services',
     description:
-      '2D animation studio in Bangalore — explainer videos, character animation, whiteboard animation & motion graphics. Fixed price.',
+      'We are a trusted 2D animation studio in Bangalore creating engaging animated videos for brands, products, marketing and business communication.',
     images: [SITE.teamPhoto],
   },
 }

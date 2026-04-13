@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Website Development Company in Bangalore | NNC Digital',
+  title: 'Website Development Company in Bangalore for Business Growth',
   description:
-    'Top website development company in Bangalore. Web development company, website design company, website developers, best website development, custom website development, React JS, Next JS, responsive web design & affordable website development. Office in Bangalore. Fixed price.',
+    'Get high performance websites that drive leads and sales. Choose a trusted website development company in Bangalore for scalable solutions.',
   alternates: {
     canonical: `${SITE.url}/website-development-company-in-bangalore`,
   },
   keywords:
     'website development company in bangalore, web development company in bangalore, website design company in bangalore, website developers in bangalore, best website development company bangalore, top website development company bangalore, custom website development bangalore, corporate website development bangalore, business website design bangalore, react js development company bangalore, next js development company bangalore, website maker in bangalore, website design services bangalore, affordable website development bangalore, professional website design bangalore, responsive website development bangalore, website development services bangalore, website company bangalore, hire web developers bangalore, web design agency bangalore',
   openGraph: {
-    title: 'Website Development Company in Bangalore | NNC Digital',
+    title: 'Website Development Company in Bangalore for Business Growth',
     description:
-      'Website development company in Bangalore — custom website development, React JS, Next JS, responsive web design, corporate website development & affordable website development services.',
+      'Get high performance websites that drive leads and sales. Choose a trusted website development company in Bangalore for scalable solutions.',
     url: `${SITE.url}/website-development-company-in-bangalore`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Website Development Company in Bangalore | NNC Digital',
+    title: 'Website Development Company in Bangalore for Business Growth',
     description:
-      'Website development company in Bangalore — custom websites, React JS, Next JS, responsive design, corporate & business website development. Fixed price.',
+      'Get high performance websites that drive leads and sales. Choose a trusted website development company in Bangalore for scalable solutions.',
     images: [SITE.teamPhoto],
   },
 }

@@ -122,14 +122,11 @@ const PORTFOLIO_ITEMS = [
 ]
 
 const COMPANY_ABOUT = [
-  { name: 'About NNC',         dot: '#2196F3', href: '/about-us' },
-  { name: 'Our In-house Team', dot: '#10B981', href: '/about-us' },
   { name: 'Careers',           dot: '#F59E0B', badge: 'Hiring', bb: '#FEF9C3', bc: '#713F12', href: '/careers' },
   { name: 'Client Reviews',    dot: '#0B1F4B', badge: '4.9 ★', bb: '#EFF6FF', bc: '#1E40AF', href: '/client-reviews' },
 ]
 const COMPANY_RES = [
   { name: 'Blog & Insights',   dot: '#7C3AED', href: '/blog' },
-  { name: 'Case Studies',      dot: '#EF4444', href: '/case-studies' },
   { name: 'Process Overview',  dot: '#10B981', href: '/process' },
   { name: 'Pricing Guide',     dot: '#2196F3', href: '/pricing' },
 ]
@@ -294,6 +291,18 @@ function IndustriesDrop({ open }) {
               </div>
             </a>
           ))}
+        </div>
+        <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
+          <Link href="/case-studies" style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', background: '#EFF6FF', border: '1px solid rgba(33,150,243,.2)', borderRadius: 8, textDecoration: 'none', transition: 'all .18s' }}>
+            <div style={{ width: 32, height: 32, borderRadius: 7, background: '#2196F3', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <Svg d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 000 4h6a2 2 0 000-4M9 5a2 2 0 012-2h2a2 2 0 012 2" size={14} color="#fff" sw={2} />
+            </div>
+            <div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#2196F3' }}>Case Studies</div>
+              <div style={{ fontSize: 11, color: '#64748B', marginTop: 1 }}>Real results, real clients</div>
+            </div>
+            <ArrowRight />
+          </Link>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 16px', background: '#F8FAFC', borderRadius: 8, border: '1px solid #E2E8F0' }}>
           <div>
@@ -511,10 +520,6 @@ export default function Navbar() {
               <ServicesMega open={openMenu === 'svc'} />
             </div>
             <div style={{ position: 'relative', height: 72, display: 'flex', alignItems: 'center' }}>
-              <NavTrigger label="Industries" open={openMenu === 'ind'} onClick={() => tog('ind')} />
-              <IndustriesDrop open={openMenu === 'ind'} />
-            </div>
-            <div style={{ position: 'relative', height: 72, display: 'flex', alignItems: 'center' }}>
               <Link href="/our-works" style={{
                 display: 'flex', alignItems: 'center', height: 64,
                 padding: '0 12px', fontSize: 13.5, fontWeight: 600,
@@ -532,11 +537,30 @@ export default function Navbar() {
               <CompanyDrop open={openMenu === 'co'} />
             </div>
             <div style={{ position: 'relative', height: 72, display: 'flex', alignItems: 'center' }}>
-              <NavTrigger label="Offices" open={openMenu === 'loc'} onClick={() => tog('loc')} />
-              <OfficesDrop open={openMenu === 'loc'} />
+              <NavTrigger label="Case Studies" open={openMenu === 'ind'} onClick={() => tog('ind')} />
+              <IndustriesDrop open={openMenu === 'ind'} />
             </div>
-            <Link href="/about-us" style={{ display: 'flex', alignItems: 'center', height: 64, padding: '0 12px', fontSize: 13.5, fontWeight: 600, color: '#475569', textDecoration: 'none', borderBottom: '2px solid transparent', marginBottom: -1.5, transition: 'color .18s,border-color .18s', whiteSpace: 'nowrap' }}>
+            <Link href="/about-us" style={{
+              display: 'flex', alignItems: 'center', height: 64,
+              padding: '0 12px', fontSize: 13.5, fontWeight: 600,
+              color: pathname === '/about-us' ? '#2196F3' : '#475569',
+              textDecoration: 'none',
+              borderBottom: `2px solid ${pathname === '/about-us' ? '#2196F3' : 'transparent'}`,
+              marginBottom: -1.5, transition: 'color .18s,border-color .18s',
+              whiteSpace: 'nowrap',
+            }}>
               About Us
+            </Link>
+            <Link href="/contact-us" style={{
+              display: 'flex', alignItems: 'center', height: 64,
+              padding: '0 12px', fontSize: 13.5, fontWeight: 600,
+              color: pathname === '/contact-us' ? '#2196F3' : '#475569',
+              textDecoration: 'none',
+              borderBottom: `2px solid ${pathname === '/contact-us' ? '#2196F3' : 'transparent'}`,
+              marginBottom: -1.5, transition: 'color .18s,border-color .18s',
+              whiteSpace: 'nowrap',
+            }}>
+              Contact Us
             </Link>
           </nav>
 
@@ -590,7 +614,7 @@ export default function Navbar() {
               ))}
             </MobSection>
 
-            <MobSection title="Industries" open={mobSec.ind} onToggle={() => togMob('ind')}>
+            <MobSection title="Case Studies" open={mobSec.ind} onToggle={() => togMob('ind')}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
                 {INDUSTRIES.map(i => (
                   <div key={i.name} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 10px', borderRadius: 7 }}>
@@ -599,6 +623,10 @@ export default function Navbar() {
                   </div>
                 ))}
               </div>
+              <Link href="/case-studies" onClick={() => setMobileOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '11px 10px', borderRadius: 8, background: '#EFF6FF', marginTop: 8, textDecoration: 'none' }}>
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#2196F3', flexShrink: 0 }} />
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#2196F3' }}>Case Studies →</span>
+              </Link>
             </MobSection>
 
             <MobSection title="Our Works" open={mobSec.port} onToggle={() => togMob('port')}>
@@ -627,17 +655,9 @@ export default function Navbar() {
               About Us
             </Link>
 
-            <MobSection title="Offices" open={mobSec.loc} onToggle={() => togMob('loc')}>
-              {OFFICES_DATA.map(o => (
-                <div key={o.city} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '10px 8px', borderRadius: 8 }}>
-                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: o.ic, marginTop: 5, flexShrink: 0 }} />
-                  <div>
-                    <div style={{ fontSize: 13.5, fontWeight: 700, color: '#0B1F4B' }}>{o.city}</div>
-                    <div style={{ fontSize: 11.5, color: '#94A3B8', marginTop: 1 }}>{o.addr}</div>
-                  </div>
-                </div>
-              ))}
-            </MobSection>
+            <Link href="/contact-us" onClick={() => setMobileOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '12px 8px', fontSize: 14, fontWeight: 700, color: '#0B1F4B', textDecoration: 'none', borderBottom: '1px solid #F1F5F9' }}>
+              Contact Us
+            </Link>
 
             <Link href="/behind-the-scenes" onClick={() => setMobileOpen(false)} className="bts-mob-btn" style={{ textDecoration: 'none' }}>
               <span className="bts-pill-dot" style={{ width:8, height:8 }} />

@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'B2B Marketing Agency in Bangalore | NNC Digital',
+  title: 'B2B Marketing Agency in Bangalore | Lead Generation Services',
   description:
-    'Top B2B marketing agency in Bangalore. LinkedIn lead generation, B2B lead generation company, account based marketing, ABM agency, B2B digital marketing & enterprise marketing agency for Bangalore businesses. Headquartered in Whitefield.',
+    'Choose our B2B marketing agency in Bangalore offering lead generation services to attract qualified prospects and drive consistent business growth.',
   alternates: {
     canonical: `${SITE.url}/b2b-marketing-agency-in-bangalore`,
   },
   keywords:
     'b2b marketing agency in bangalore, linkedin lead generation bangalore, b2b lead generation company bangalore, account based marketing bangalore, abm agency bangalore, b2b digital marketing bangalore, enterprise marketing agency bangalore',
   openGraph: {
-    title: 'B2B Marketing Agency in Bangalore | NNC Digital',
+    title: 'B2B Marketing Agency in Bangalore | Lead Generation Services',
     description:
-      'B2B marketing agency in Bangalore — LinkedIn lead generation, account based marketing, ABM, B2B digital marketing & enterprise marketing. Headquartered in Whitefield.',
+      'Choose our B2B marketing agency in Bangalore offering lead generation services to attract qualified prospects and drive consistent business growth.',
     url: `${SITE.url}/b2b-marketing-agency-in-bangalore`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'B2B Marketing Agency in Bangalore | NNC Digital',
+    title: 'B2B Marketing Agency in Bangalore | Lead Generation Services',
     description:
-      'B2B marketing agency in Bangalore — LinkedIn lead generation, ABM, account based marketing & B2B digital marketing. Headquartered in Whitefield.',
+      'Choose our B2B marketing agency in Bangalore offering lead generation services to attract qualified prospects and drive consistent business growth.',
     images: [SITE.teamPhoto],
   },
 }

@@ -175,7 +175,6 @@ export default function QuoteModal() {
   return (
     <div
       style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }}
-      onClick={closeModal}
     >
       {/* Backdrop */}
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(4,14,37,.75)', backdropFilter: 'blur(4px)' }} />
@@ -183,7 +182,6 @@ export default function QuoteModal() {
       {/* Modal box */}
       <div
         style={{ position: 'relative', background: '#fff', borderRadius: 16, width: '100%', maxWidth: 520, maxHeight: '90vh', overflowY: 'auto', boxShadow: '0 24px 64px rgba(0,0,0,.35)' }}
-        onClick={e => e.stopPropagation()}
       >
         {/* Close button */}
         <button

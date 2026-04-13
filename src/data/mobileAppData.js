@@ -2,9 +2,9 @@
 
 export const APP_PAGE = {
   slug: '/mobile-app-development-company-in-bangalore',
-  title: 'Mobile App Development Company in Bangalore | NNC Digital',
+  title: 'Mobile App Development Company in Bangalore | Custom Apps',
   description:
-    'Top-rated mobile app development company in Bangalore. Custom Android & iOS apps on React Native & Flutter. 150+ apps delivered. 4.9★ Google. Fixed price. Source code yours. Call +91 99005 66466.',
+    'Partner with NNC a mobile app development company in Bangalore to build scalable Android and iOS apps that drive growth, engagement, and business success.',
   keywords: [
     'mobile app development company in bangalore',
     'android app development company bangalore',

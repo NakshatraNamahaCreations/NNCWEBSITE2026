@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Mobile App Development Company in Mumbai | NNC Digital',
+  title: 'Mobile App Development Company in Mumbai | Business Apps',
   description:
-    'Top mobile app development company in Mumbai. Custom iOS & Android apps — React Native, Flutter, on-demand, enterprise, startup MVP & ecommerce app development. App developers in Mumbai with office in Thane West. Fixed price. 100+ apps delivered.',
+    'Choose a mobile app development company in Mumbai to build scalable Android and iOS apps, with NNC delivering high performance and user friendly solutions.',
   alternates: {
     canonical: `${SITE.url}/mobile-app-development-company-in-mumbai`,
   },
   keywords:
     'mobile app development company in mumbai, app development company in mumbai, mobile app developers in mumbai, best mobile app development company mumbai, top app development company mumbai, app developers in mumbai, mobile application development mumbai, custom mobile app development mumbai, enterprise mobile app development mumbai, on demand app development mumbai, hire mobile app developers mumbai, app development services mumbai, startup app development mumbai, mvp app development mumbai, app development agency mumbai',
   openGraph: {
-    title: 'Mobile App Development Company in Mumbai | NNC Digital',
+    title: 'Mobile App Development Company in Mumbai | Business Apps',
     description:
-      'Custom iOS & Android app development in Mumbai — React Native, Flutter, on-demand, enterprise, startup & MVP apps. Office in Thane West. Fixed price. 100+ apps delivered.',
+      'Choose a mobile app development company in Mumbai to build scalable Android and iOS apps, with NNC delivering high performance and user friendly solutions.',
     url: `${SITE.url}/mobile-app-development-company-in-mumbai`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Mobile App Development Company in Mumbai | NNC Digital',
+    title: 'Mobile App Development Company in Mumbai | Business Apps',
     description:
-      'Mobile app developers in Mumbai — React Native, Flutter, iOS & Android. On-demand, enterprise, MVP & startup apps. Office in Thane West. Fixed price.',
+      'Choose a mobile app development company in Mumbai to build scalable Android and iOS apps, with NNC delivering high performance and user friendly solutions.',
     images: [SITE.teamPhoto],
   },
 }

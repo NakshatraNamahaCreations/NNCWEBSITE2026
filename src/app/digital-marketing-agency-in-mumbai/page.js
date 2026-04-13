@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Digital Marketing Agency in Mumbai | NNC Digital',
+  title: 'Digital Marketing Agency in Mumbai | Digital Growth Solution',
   description:
-    'Top digital marketing agency in Mumbai. SEO, Google Ads, Meta Ads, social media marketing, performance marketing & lead generation for Mumbai businesses. Office in Thane West. Transparent reporting. Real results.',
+    'Choose a digital marketing agency in Mumbai to boost online visibility and leads, with NNC delivering SEO, ads, and performance driven marketing strategies.',
   alternates: {
     canonical: `${SITE.url}/digital-marketing-agency-in-mumbai`,
   },
   keywords:
     'digital marketing agency in mumbai, digital marketing company mumbai, digital marketing services mumbai, best digital marketing agency mumbai, top digital marketing company mumbai, digital marketing experts mumbai, online marketing agency mumbai, performance marketing agency mumbai, lead generation agency mumbai, digital marketing consultants mumbai, seo services in mumbai, seo company in mumbai, best seo company mumbai, local seo services mumbai, seo agency in mumbai, technical seo services mumbai, on page seo services mumbai, seo experts mumbai, seo consultants mumbai, ecommerce seo services mumbai, hire seo expert mumbai, affordable seo services mumbai, google ads agency in mumbai, google ads management mumbai, ppc agency mumbai, ppc services mumbai, google adwords agency mumbai, google ads experts mumbai, adwords management mumbai, google ads consultants mumbai, pay per click agency mumbai, social media marketing agency mumbai, social media marketing company mumbai, instagram marketing agency mumbai, facebook ads agency mumbai, meta ads agency mumbai, social media management mumbai, linkedin marketing agency mumbai, social media services mumbai',
   openGraph: {
-    title: 'Digital Marketing Agency in Mumbai | NNC Digital',
+    title: 'Digital Marketing Agency in Mumbai | Digital Growth Solution',
     description:
-      'SEO, Google Ads, Meta Ads, social media marketing & performance marketing for Mumbai businesses. Office in Thane West. Transparent reporting. Real leads.',
+      'Choose a digital marketing agency in Mumbai to boost online visibility and leads, with NNC delivering SEO, ads, and performance driven marketing strategies.',
     url: `${SITE.url}/digital-marketing-agency-in-mumbai`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Digital Marketing Agency in Mumbai | NNC Digital',
+    title: 'Digital Marketing Agency in Mumbai | Digital Growth Solution',
     description:
-      'Digital marketing agency in Mumbai — SEO, Google Ads, Meta Ads, social media, performance marketing. Office in Thane West.',
+      'Choose a digital marketing agency in Mumbai to boost online visibility and leads, with NNC delivering SEO, ads, and performance driven marketing strategies.',
     images: [SITE.teamPhoto],
   },
 }

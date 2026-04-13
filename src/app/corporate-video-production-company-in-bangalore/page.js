@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Corporate Video Production Company in Bangalore | NNC Digital',
+  title: 'Corporate Video Production Company in Bangalore | Video Work',
   description:
-    'Top corporate video production company in Bangalore. Video production company, corporate film makers, brand film production, ad film production, drone video production, product video shoot, corporate video makers & commercial video production. Headquartered in Whitefield. Fixed price.',
+    'NNC is a Best corporate video production company in Bangalore delivering professional brand, promotional, and business videos for better engagement and growth.',
   alternates: {
     canonical: `${SITE.url}/corporate-video-production-company-in-bangalore`,
   },
   keywords:
     'corporate video production company in bangalore, video production company bangalore, corporate film makers bangalore, brand film production bangalore, ad film production bangalore, drone video production bangalore, product video shoot bangalore, corporate video makers bangalore, commercial video production bangalore',
   openGraph: {
-    title: 'Corporate Video Production Company in Bangalore | NNC Digital',
+    title: 'Corporate Video Production Company in Bangalore | Video Work',
     description:
-      'Corporate video production company in Bangalore — brand films, ad films, drone video, product video shoots, corporate films & commercial video production. Fixed price.',
+      'NNC is a Best corporate video production company in Bangalore delivering professional brand, promotional, and business videos for better engagement and growth.',
     url: `${SITE.url}/corporate-video-production-company-in-bangalore`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Corporate Video Production Company in Bangalore | NNC Digital',
+    title: 'Corporate Video Production Company in Bangalore | Video Work',
     description:
-      'Corporate video production company in Bangalore — brand films, ad films, drone video, product shoots & commercial video production. Fixed price.',
+      'NNC is a Best corporate video production company in Bangalore delivering professional brand, promotional, and business videos for better engagement and growth.',
     images: [SITE.teamPhoto],
   },
 }

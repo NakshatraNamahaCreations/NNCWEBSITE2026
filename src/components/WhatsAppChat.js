@@ -327,7 +327,7 @@ export default function WhatsAppChat() {
   return (
     <>
       {/* ── Floating trigger ─────────────────────────────── */}
-      <div style={{ position: 'fixed', bottom: 100, right: 28, zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 10 }}>
+      <div style={{ position: 'fixed', bottom: 96, right: 28, zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 10 }}>
         {!open && (
           <div style={{
             background: '#fff', padding: '10px 16px', borderRadius: 12,
@@ -378,12 +378,12 @@ export default function WhatsAppChat() {
       {/* ── Chat window ─────────────────────────────────── */}
       {open && (
         <div style={{
-          position: 'fixed', bottom: 180, right: 28, zIndex: 9998,
-          width: 400, maxWidth: 'calc(100vw - 24px)',
+          position: 'fixed', bottom: 176, right: 28, zIndex: 9998,
+          width: 380, maxWidth: 'calc(100vw - 32px)',
           borderRadius: 20, overflow: 'hidden',
           boxShadow: '0 24px 80px rgba(0,0,0,.18), 0 0 0 1px rgba(0,0,0,.04)',
           display: 'flex', flexDirection: 'column',
-          height: 'min(660px, calc(100vh - 140px))',
+          height: 'min(580px, calc(100vh - 200px))',
           fontFamily: "'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif",
           animation: 'nncSlideUp .3s cubic-bezier(.34,1.56,.64,1)',
           background: '#fff',
@@ -449,9 +449,10 @@ export default function WhatsAppChat() {
             flex: 1, minHeight: 0, overflowY: 'auto', padding: '16px 14px',
             background: 'linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)',
             display: 'flex', flexDirection: 'column', gap: 8,
+            overflowX: 'hidden',
           }}>
             {messages.map((m, i) => (
-              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: m.from === 'user' ? 'flex-end' : 'flex-start', animation: 'nncMsgIn .3s ease-out' }}>
+              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: m.from === 'user' ? 'flex-end' : 'flex-start', width: '100%', animation: 'nncMsgIn .3s ease-out' }}>
                 {m.from === 'bot' && (
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 3, paddingLeft: 2 }}>
                     <div style={{ width: 16, height: 16, borderRadius: 5, overflow: 'hidden', background: '#0B1F4B' }}>
