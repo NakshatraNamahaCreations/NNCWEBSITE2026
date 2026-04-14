@@ -35,16 +35,23 @@ export async function generateMetadata({ params }) {
   }
 }
 
-// Generate placeholder blog content from title
+// Generate blog content — uses custom body if available, falls back to template
 function generateContent(post) {
-  const paras = [
-    `This is a comprehensive guide on ${post.title.toLowerCase()} from NNC Digital's team in Bengaluru. Our in-house specialists have delivered 565+ projects and bring real, hands-on experience to every topic we cover.`,
+  // If post has custom body content, split by newlines into paragraphs
+  if (post.body && post.body.trim()) {
+    return post.body.split('\n').filter(p => p.trim())
+  }
+  // If post has a description, use it as the opening paragraph
+  const opener = post.description && post.description.trim()
+    ? post.description
+    : `This is a comprehensive guide on ${post.title.toLowerCase()} from NNC Digital's team in Bengaluru. Our in-house specialists have delivered 565+ projects and bring real, hands-on experience to every topic we cover.`
+  return [
+    opener,
     `Understanding ${post.category.toLowerCase()} is critical for businesses in India looking to grow their digital presence. Whether you're a startup or an established company, the insights here will help you make smarter decisions.`,
     `At NNC Digital, we've worked with businesses across healthcare, real estate, e-commerce, education and more. Our team of 35+ permanent in-house specialists has seen what works and what doesn't in the Indian market.`,
     `The key takeaway from our experience: the best results come from clarity of requirements, a fixed-price engagement, and a team that is permanently accountable for what they build. Not freelancers. Not outsourced work. Permanent employees with skin in the game.`,
     `If you have questions about ${post.title.toLowerCase()}, or want to discuss how NNC Digital can help your business, contact our team. We respond with a detailed scope and fixed price within 24 hours.`,
   ]
-  return paras
 }
 
 export default function BlogPostPage({ params }) {

@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: '2D Animation Studio in Mumbai | NNC Digital',
+  title: '2D Animation Studio in Mumbai | Whiteboard Animation Studio',
   description:
-    'Top 2D animation studio in Mumbai. Explainer videos, animated explainer videos, character animation, whiteboard animation, motion graphics, product explainer videos & animation services. Office in Thane West. Fixed price.',
+    'Choose a 2D animation studio in Mumbai to create engaging animated videos, with NNC delivering creative animation solutions for brands and marketing.',
   alternates: {
     canonical: `${SITE.url}/2d-animation-studio-in-mumbai`,
   },
   keywords:
     '2d animation studio in mumbai, 2d animation company mumbai, explainer video company mumbai, animated explainer videos mumbai, character animation studio mumbai, whiteboard animation mumbai, motion graphics company mumbai, animation services mumbai, product explainer video mumbai',
   openGraph: {
-    title: '2D Animation Studio in Mumbai | NNC Digital',
+    title: '2D Animation Studio in Mumbai | Whiteboard Animation Studio',
     description:
-      '2D animation company in Mumbai — explainer videos, character animation, whiteboard animation, motion graphics & product explainer videos. Office in Thane West. Fixed price.',
+      'Choose a 2D animation studio in Mumbai to create engaging animated videos, with NNC delivering creative animation solutions for brands and marketing.',
     url: `${SITE.url}/2d-animation-studio-in-mumbai`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: '2D Animation Studio in Mumbai | NNC Digital',
+    title: '2D Animation Studio in Mumbai | Whiteboard Animation Studio',
     description:
-      '2D animation studio in Mumbai — explainer videos, character animation, motion graphics, whiteboard animation. Office in Thane West. Fixed price.',
+      'Choose a 2D animation studio in Mumbai to create engaging animated videos, with NNC delivering creative animation solutions for brands and marketing.',
     images: [SITE.teamPhoto],
   },
 }

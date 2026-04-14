@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Ecommerce Website Development Company in Mumbai | NNC Digital',
+  title: 'Ecommerce Website Development Company in Mumbai | Shopping',
   description:
-    'Top ecommerce website development company in Mumbai. Custom online store development, ecommerce website design, Shopify, WooCommerce, Magento, B2B, D2C, marketplace & ecommerce app development. Office in Thane West. Fixed price. 60+ stores delivered.',
+    'We are the Best ecommerce website development company in Mumbai to build high converting online stores, with NNC delivering user friendly ecommerce solutions.',
   alternates: {
     canonical: `${SITE.url}/ecommerce-website-development-company-in-mumbai`,
   },
   keywords:
     'ecommerce website development company mumbai, ecommerce development company in mumbai, ecommerce website design mumbai, online store development mumbai, shopify development company mumbai, woocommerce development mumbai, magento development company mumbai, ecommerce app development mumbai, b2b ecommerce development mumbai, d2c website development mumbai, custom ecommerce platform mumbai, marketplace development company mumbai',
   openGraph: {
-    title: 'Ecommerce Website Development Company in Mumbai | NNC Digital',
+    title: 'Ecommerce Website Development Company in Mumbai | Shopping',
     description:
-      'Custom ecommerce website design & development in Mumbai — Shopify, WooCommerce, Magento, D2C, B2B, marketplace & ecommerce app development. Razorpay, PageSpeed 90+. Office in Thane West.',
+      'We are the Best ecommerce website development company in Mumbai to build high converting online stores, with NNC delivering user friendly ecommerce solutions.',
     url: `${SITE.url}/ecommerce-website-development-company-in-mumbai`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Ecommerce Website Development Company in Mumbai | NNC Digital',
+    title: 'Ecommerce Website Development Company in Mumbai | Shopping',
     description:
-      'Ecommerce website design, online store development, Shopify, WooCommerce, Magento, D2C & B2B ecommerce in Mumbai. Fixed price. Office in Thane West.',
+      'We are the Best ecommerce website development company in Mumbai to build high converting online stores, with NNC delivering user friendly ecommerce solutions.',
     images: [SITE.teamPhoto],
   },
 }

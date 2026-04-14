@@ -8,10 +8,10 @@ const CATEGORIES = ['All', ...[...new Set(BLOG_POSTS.map(p => p.category))]]
 export default function BlogContent() {
   const [active, setActive] = useState('All')
 
-  const posts = useMemo(
-    () => active === 'All' ? BLOG_POSTS : BLOG_POSTS.filter(p => p.category === active),
-    [active]
-  )
+  const posts = useMemo(() => {
+    const filtered = active === 'All' ? BLOG_POSTS : BLOG_POSTS.filter(p => p.category === active)
+    return [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date))
+  }, [active])
 
   return (
     <section style={{ background: '#F8FAFC', padding: '72px 0' }}>

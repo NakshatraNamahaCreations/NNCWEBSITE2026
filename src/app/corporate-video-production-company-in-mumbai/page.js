@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Corporate Video Production Company in Mumbai | NNC Digital',
+  title: 'Corporate Video Production Company in Mumbai | Marketing Video',
   description:
-    'Top corporate video production company in Mumbai. Brand films, ad film production, drone video, product video shoots, corporate film makers, commercial video production & corporate video makers. Office in Thane West. Fixed price.',
+    'Choose a corporate video production company in Mumbai to create brand videos,with NNC delivering professional video solutions for marketing and business growth.',
   alternates: {
     canonical: `${SITE.url}/corporate-video-production-company-in-mumbai`,
   },
   keywords:
     'corporate video production company in mumbai, video production company mumbai, corporate film makers mumbai, brand film production mumbai, ad film production mumbai, drone video production mumbai, product video shoot mumbai, corporate video makers mumbai, commercial video production mumbai',
   openGraph: {
-    title: 'Corporate Video Production Company in Mumbai | NNC Digital',
+    title: 'Corporate Video Production Company in Mumbai | Marketing Video',
     description:
-      'Corporate video production in Mumbai — brand films, ad film production, drone video, product shoots & commercial video production. Office in Thane West. Fixed price.',
+      'Choose a corporate video production company in Mumbai to create brand videos,with NNC delivering professional video solutions for marketing and business growth.',
     url: `${SITE.url}/corporate-video-production-company-in-mumbai`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Corporate Video Production Company in Mumbai | NNC Digital',
+    title: 'Corporate Video Production Company in Mumbai | Marketing Video',
     description:
-      'Corporate video production company in Mumbai — brand films, ad films, drone video, product shoots. Office in Thane West. Fixed price.',
+      'Choose a corporate video production company in Mumbai to create brand videos,with NNC delivering professional video solutions for marketing and business growth.',
     images: [SITE.teamPhoto],
   },
 }

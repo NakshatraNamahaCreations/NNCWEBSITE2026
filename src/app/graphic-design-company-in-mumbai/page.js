@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Graphic Design Company in Mumbai | NNC Digital',
+  title: 'Graphic Design Company in Mumbai | Visual Design Solutions',
   description:
-    'Top graphic design company in Mumbai. Branding agency, logo design, brand identity design, UI UX design, packaging design, brochure design & creative agency services for Mumbai businesses. Office in Thane West. Fixed price.',
+    'We are a  top graphic design company in Mumbai for impactful branding and visuals, with NNC delivering creative design solutions that enhance your business.',
   alternates: {
     canonical: `${SITE.url}/graphic-design-company-in-mumbai`,
   },
   keywords:
     'graphic design company in mumbai, branding agency mumbai, logo design company mumbai, brand identity design mumbai, ui ux design company mumbai, packaging design company mumbai, brochure design mumbai, brand identity agency mumbai, creative agency mumbai',
   openGraph: {
-    title: 'Graphic Design Company in Mumbai | NNC Digital',
+    title: 'Graphic Design Company in Mumbai | Visual Design Solutions',
     description:
-      'Graphic design & branding agency in Mumbai — logo design, brand identity, UI UX design, packaging design, brochure design & creative agency services. Office in Thane West.',
+      'We are a  top graphic design company in Mumbai for impactful branding and visuals, with NNC delivering creative design solutions that enhance your business.',
     url: `${SITE.url}/graphic-design-company-in-mumbai`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Graphic Design Company in Mumbai | NNC Digital',
+    title: 'Graphic Design Company in Mumbai | Visual Design Solutions',
     description:
-      'Graphic design company in Mumbai — logo design, brand identity, UI UX, packaging & brochure design. Office in Thane West. Fixed price.',
+      'We are a  top graphic design company in Mumbai for impactful branding and visuals, with NNC delivering creative design solutions that enhance your business.',
     images: [SITE.teamPhoto],
   },
 }

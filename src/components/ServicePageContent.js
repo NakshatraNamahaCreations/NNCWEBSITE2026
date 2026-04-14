@@ -602,10 +602,6 @@ export default function ServicePageContent({ data }) {
         <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
           <div className="row align-items-center g-5">
             <div className="col-lg-7">
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: 'rgba(33,150,243,.15)', border: '1px solid rgba(33,150,243,.25)', padding: '5px 14px', borderRadius: 30, marginBottom: 18, fontSize: 11.5, fontWeight: 700, color: 'rgba(255,255,255,.8)', letterSpacing: '.06em', textTransform: 'uppercase' }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#10B981', display: 'inline-block' }} />
-                {data.badge}
-              </div>
               <h1 style={{ fontSize: 'clamp(28px,4.5vw,52px)', fontWeight: 800, color: '#fff', letterSpacing: '-.05em', lineHeight: 1.06, marginBottom: 18 }}>
                 {data.h1}<br />
                 <span style={{ color: '#2196F3' }}>{data.h1Accent}</span>
