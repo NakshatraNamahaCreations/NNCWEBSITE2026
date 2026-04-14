@@ -736,7 +736,7 @@ export default function AdminBlogPage() {
                       </div>
                       {isConfirming && (
                         <div className="cfm-row">
-                          <div className="cfm-txt">⚠ Delete "<strong>{post.title}</strong>"? This cannot be undone.</div>
+                          <div className="cfm-txt">⚠ Delete &quot;<strong>{post.title}</strong>&quot;? This cannot be undone.</div>
                           <div style={{display:'flex',gap:8}}>
                             <button onClick={()=>handleDelete(post.slug)} className="cfm-y">Yes, Delete</button>
                             <button onClick={()=>setDeleteConfirm(null)} className="cfm-n">Cancel</button>
