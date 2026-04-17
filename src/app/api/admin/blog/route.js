@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { readPosts, writePosts } from '@/data/blogStore'
 
+export const dynamic = 'force-dynamic'
+
 const ADMIN_SECRET = process.env.ADMIN_SECRET || 'nnc-admin-2026'
 
 function auth(secret) {
