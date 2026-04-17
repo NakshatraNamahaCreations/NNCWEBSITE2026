@@ -305,6 +305,7 @@ export const BLOG_POSTS = [
   { slug: 'how-to-build-an-ecommerce-website-in-india', title: 'E-commerce Guide India How to Build & Launch in 2026', category: 'Website Development', date: '2026-03-01', readTime: '9 min', description: 'How to start selling online in India platform comparison, payment gateways, GST compliance and mobile-first design. Step-by-step guide for 2026.' },
   { slug: '2d-animation-vs-live-video-for-marketing', title: '2D Animation vs Live Video for Marketing', category: 'Animation', date: '2026-03-01', readTime: '6 min', description: '2D animation or live video? Compare cost, engagement, flexibility and production time to choose the right format for your brand marketing campaign.' },
   { slug: 'mobile-app-development-cost-india-2026', title: 'Mobile App Development Cost in India 2026', category: 'Mobile Apps', date: '2026-03-24', readTime: '8 min', description: 'test' },
+  { slug: 'test', title: 'test', category: 'Design', date: '2026-04-17', readTime: '6 min', description: 'test', body: 'test' },
 ]
 
 // ─── CASE STUDIES ─────────────────────────────────────────────────────────────
