@@ -36,6 +36,7 @@ export default function AdminBlogPage() {
   const [editResult, setEditResult]   = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [filterCat, setFilterCat]   = useState('All')
+  const [sortBy, setSortBy]         = useState('newest')
 
   async function loadPosts(pwd) {
     try {
@@ -267,6 +268,13 @@ export default function AdminBlogPage() {
   const filtered = allPosts
     .filter(p => filterCat==='All' || p.category===filterCat)
     .filter(p => !searchTerm || p.title.toLowerCase().includes(searchTerm.toLowerCase()) || p.slug.includes(searchTerm.toLowerCase()))
+    .sort((a,b) => {
+      if (sortBy==='newest') return new Date(b.date) - new Date(a.date)
+      if (sortBy==='oldest') return new Date(a.date) - new Date(b.date)
+      if (sortBy==='az')     return a.title.localeCompare(b.title)
+      if (sortBy==='za')     return b.title.localeCompare(a.title)
+      return 0
+    })
 
   return (
     <>
@@ -695,6 +703,12 @@ export default function AdminBlogPage() {
                 <select value={filterCat} onChange={e=>setFilterCat(e.target.value)} className="pfilt">
                   <option value="All">All Categories</option>
                   {CATEGORIES.map(c=><option key={c} value={c}>{c}</option>)}
+                </select>
+                <select value={sortBy} onChange={e=>setSortBy(e.target.value)} className="pfilt">
+                  <option value="newest">↓ Newest First</option>
+                  <option value="oldest">↑ Oldest First</option>
+                  <option value="az">A → Z</option>
+                  <option value="za">Z → A</option>
                 </select>
               </div>
             </div>
