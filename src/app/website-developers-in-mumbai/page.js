@@ -38,6 +38,37 @@ export const metadata = {
   },
 }
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://www.nakshatranamahacreations.com/website-developers-in-mumbai#localbusiness',
+  name: 'Nakshatra Namaha Creations',
+  legalName: 'Nakshatra Namaha Creations Private Limited',
+  alternateName: 'NNC Digital Mumbai',
+  description: 'Nakshatra Namaha Creations is a leading website development, mobile app development, CRM and digital marketing company in Thane West, Mumbai. React JS and Node JS development, Android and iOS apps, corporate video, 2D animation, SEO and B2B digital solutions delivered by a 35+ in-house team across 4 offices in India.',
+  url: 'https://www.nakshatranamahacreations.com/website-developers-in-mumbai',
+  mainEntityOfPage: 'https://www.nakshatranamahacreations.com/website-developers-in-mumbai',
+  logo: 'https://www.nakshatranamahacreations.com/images/logo.png',
+  image: ['https://www.nakshatranamahacreations.com/images/mumbai-office-exterior.jpg', 'https://www.nakshatranamahacreations.com/images/mumbai-office-interior.jpg', 'https://www.nakshatranamahacreations.com/images/mumbai-team.jpg'],
+  telephone: '+91-85910-18808',
+  email: 'info@nakshatranamahacreations.com',
+  foundingDate: '2015-03-07',
+  priceRange: '₹₹',
+  currenciesAccepted: 'INR',
+  paymentAccepted: 'Cash, Credit Card, Debit Card, UPI, Bank Transfer',
+  address: { '@type': 'PostalAddress', streetAddress: '#302, Lodha Signet, Kolshet Road, Kolshet Industrial Area', addressLocality: 'Thane West', addressRegion: 'Maharashtra', postalCode: '400607', addressCountry: 'IN' },
+  geo: { '@type': 'GeoCoordinates', latitude: 19.2183, longitude: 72.9781 },
+  hasMap: 'https://maps.google.com/?cid=11106432787787543210',
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '09:30', closes: '19:30' }],
+  areaServed: [{ '@type': 'City', name: 'Thane West' }, { '@type': 'City', name: 'Thane East' }, { '@type': 'City', name: 'Mumbai' }, { '@type': 'Place', name: 'Kolshet' }, { '@type': 'Place', name: 'Ghodbunder Road' }, { '@type': 'Place', name: 'Mulund' }, { '@type': 'Place', name: 'Powai' }, { '@type': 'Place', name: 'Bandra Kurla Complex' }],
+  serviceArea: { '@type': 'GeoCircle', geoMidpoint: { '@type': 'GeoCoordinates', latitude: 19.2183, longitude: 72.9781 }, geoRadius: '50000' },
+  makesOffer: [{ '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Development' } }, { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mobile App Development' } }, { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM and Custom Software Development' } }, { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Digital Marketing and SEO' } }, { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '2D Animation and Corporate Video Production' } }, { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Graphic Design and Branding' } }, { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'B2B Marketing' } }],
+  knowsAbout: ['React JS Development', 'Node JS Development', 'React Native App Development', 'Next.js Development', 'MongoDB', 'SEO', 'Google Ads', 'CRM Software', 'SaaS Platforms'],
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '8', bestRating: '5', worstRating: '1' },
+  sameAs: ['https://www.linkedin.com/in/harish-kashyap-65035678', 'https://www.instagram.com/nnc.digitalbengaluru', 'https://www.facebook.com/Nakshatranamahacreations'],
+  parentOrganization: { '@type': 'Organization', name: 'Nakshatra Namaha Creations Private Limited', url: 'https://www.nakshatranamahacreations.com', founder: { '@type': 'Person', name: 'Harish Kashyap', jobTitle: 'Founder and Managing Director' } },
+}
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -294,6 +325,7 @@ const data = {
 export default function WebsiteDevelopersInMumbaiPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
