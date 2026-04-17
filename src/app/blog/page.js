@@ -3,6 +3,7 @@ import AnimObserver from '@/components/AnimObserver'
 import { SeoKeywords, Footer, WaFloat } from '@/components/Sections'
 import BlogContent from './BlogContent'
 import { SITE } from '@/data/siteData'
+import { readPosts } from '@/data/blogStore'
 
 export const metadata = {
   title: 'Blog & Insights | Website Development, SEO & Digital Marketing Tips | NNC Digital',
@@ -11,6 +12,7 @@ export const metadata = {
 }
 
 export default function BlogPage() {
+  const posts = readPosts()
   return (
     <>
       <Navbar />
@@ -25,7 +27,7 @@ export default function BlogPage() {
             </p>
           </div>
         </section>
-        <BlogContent />
+        <BlogContent initialPosts={posts} />
       </main>
       <SeoKeywords />
       <Footer />

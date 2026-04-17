@@ -1,17 +1,16 @@
 'use client'
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { BLOG_POSTS } from '@/data/landingData'
 
-const CATEGORIES = ['All', ...[...new Set(BLOG_POSTS.map(p => p.category))]]
-
-export default function BlogContent() {
+export default function BlogContent({ initialPosts = [] }) {
   const [active, setActive] = useState('All')
 
+  const CATEGORIES = useMemo(() => ['All', ...[...new Set(initialPosts.map(p => p.category))]], [initialPosts])
+
   const posts = useMemo(() => {
-    const filtered = active === 'All' ? BLOG_POSTS : BLOG_POSTS.filter(p => p.category === active)
+    const filtered = active === 'All' ? initialPosts : initialPosts.filter(p => p.category === active)
     return [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date))
-  }, [active])
+  }, [active, initialPosts])
 
   return (
     <section style={{ background: '#F8FAFC', padding: '72px 0' }}>

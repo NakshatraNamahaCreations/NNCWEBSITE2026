@@ -111,16 +111,13 @@ export default function AdminBlogPage() {
     if (!form.title.trim()) { setEditResult({error:'Title is required.'}); return }
     setEditLoading(true)
     try {
-      const delRes  = await fetch('/api/admin/blog',{ method:'DELETE', headers:{'Content-Type':'application/json'}, body:JSON.stringify({secret,slug:editSlug}) })
-      const delData = await delRes.json()
-      if (!delData.success) { setEditResult({error:'Could not update: '+delData.error}); setEditLoading(false); return }
-      const addRes  = await fetch('/api/admin/blog',{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({...form,secret}) })
-      const addData = await addRes.json()
-      if (addData.success) {
+      const res  = await fetch('/api/admin/blog',{ method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify({...form, originalSlug:editSlug, secret}) })
+      const data = await res.json()
+      if (data.success) {
         setAllPosts(p=>p.map(x=> x.slug===editSlug ? {...x,...form} : x))
         setEditResult({success:true, message:'Post updated successfully'})
         setTimeout(()=>{ setEditSlug(null); setForm(makeEmptyForm()); setAutoSlug(true); setEditResult(null) }, 1500)
-      } else { setEditResult({error:addData.error}) }
+      } else { setEditResult({error:data.error}) }
     } catch(err) { setEditResult({error:'Network error: '+err.message}) }
     finally { setEditLoading(false) }
   }

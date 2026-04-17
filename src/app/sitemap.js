@@ -1,5 +1,5 @@
-import { SLUG_MAP } from '@/data/landingData'
-import { BLOG_POSTS, CASE_STUDY_DATA } from '@/data/landingData'
+import { SLUG_MAP, CASE_STUDY_DATA } from '@/data/landingData'
+import { readPosts } from '@/data/blogStore'
 
 const BASE = 'https://www.nakshatranamahacreations.com'
 
@@ -37,7 +37,7 @@ export default function sitemap() {
   }))
 
   // Blog posts
-  const blogPages = BLOG_POSTS.map(post => ({
+  const blogPages = readPosts().map(post => ({
     url: `${BASE}/blog/${post.slug}`,
     lastModified: post.date,
     priority: 0.8,

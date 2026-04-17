@@ -1,16 +1,16 @@
 import Navbar from '@/components/Navbar'
 import AnimObserver from '@/components/AnimObserver'
 import { SeoKeywords, Footer, WaFloat } from '@/components/Sections'
-import { BLOG_POSTS } from '@/data/landingData'
+import { readPosts } from '@/data/blogStore'
 import { SITE } from '@/data/siteData'
 import Link from 'next/link'
 
 export async function generateStaticParams() {
-  return BLOG_POSTS.map(p => ({ slug: p.slug }))
+  return readPosts().map(p => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }) {
-  const post = BLOG_POSTS.find(p => p.slug === params.slug)
+  const post = readPosts().find(p => p.slug === params.slug)
   if (!post) return { title: 'Blog | NNC Digital' }
   const description = post.description || `${post.title} practical insights from NNC Digital's in-house team in Bengaluru. Expert guide on ${post.category.toLowerCase()} for businesses in India.`
   return {
@@ -55,11 +55,12 @@ function generateContent(post) {
 }
 
 export default function BlogPostPage({ params }) {
-  const post = BLOG_POSTS.find(p => p.slug === params.slug)
+  const allPosts = readPosts()
+  const post = allPosts.find(p => p.slug === params.slug)
   if (!post) return <div style={{ padding: 80, textAlign: 'center', fontSize: 18, color: '#6B7A99' }}>Blog post not found.</div>
 
   const content = generateContent(post)
-  const related = BLOG_POSTS.filter(p => p.category === post.category && p.slug !== post.slug).slice(0, 3)
+  const related = allPosts.filter(p => p.category === post.category && p.slug !== post.slug).slice(0, 3)
 
   const articleSchema = {
     '@context': 'https://schema.org',
