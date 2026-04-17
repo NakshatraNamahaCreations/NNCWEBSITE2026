@@ -13,14 +13,16 @@ function slugify(t) {
   return t.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-')
 }
 
-const EMPTY_FORM = { title:'', slug:'', category:'Website Development', date: new Date().toISOString().slice(0,10), readTime:'6 min', description:'', bodyContent:'' }
+function makeEmptyForm() {
+  return { title:'', slug:'', category:'Website Development', date: new Date().toISOString().slice(0,10), readTime:'6 min', description:'', bodyContent:'' }
+}
 
 export default function AdminBlogPage() {
   const [secret, setSecret]         = useState('')
   const [authed, setAuthed]         = useState(false)
   const [authError, setAuthError]   = useState('')
   const [showPass, setShowPass]     = useState(false)
-  const [form, setForm]             = useState(EMPTY_FORM)
+  const [form, setForm]             = useState(makeEmptyForm)
   const [autoSlug, setAutoSlug]     = useState(true)
   const [loading, setLoading]       = useState(false)
   const [result, setResult]         = useState(null)
@@ -72,7 +74,7 @@ export default function AdminBlogPage() {
         setResult({success:true, message:data.message, url:data.url})
         setExistingSlugs(s=>[...s,form.slug])
         setAllPosts(p=>[{slug:form.slug,title:form.title,category:form.category,date:form.date,readTime:form.readTime},...p])
-        setForm(EMPTY_FORM); setAutoSlug(true)
+        setForm(makeEmptyForm()); setAutoSlug(true)
       } else { setResult({error:data.error||'Something went wrong'}) }
     } catch(err) { setResult({error:'Network error: '+err.message}) }
     finally { setLoading(false) }
@@ -100,7 +102,7 @@ export default function AdminBlogPage() {
     window.scrollTo({top:0,behavior:'smooth'})
   }
   function cancelEdit() {
-    setEditSlug(null); setForm(EMPTY_FORM); setAutoSlug(true); setResult(null)
+    setEditSlug(null); setForm(makeEmptyForm()); setAutoSlug(true); setResult(null)
   }
 
   async function handleUpdate(e) {
@@ -116,7 +118,7 @@ export default function AdminBlogPage() {
       if (addData.success) {
         setAllPosts(p=>p.map(x=> x.slug===editSlug ? {...x,...form} : x))
         setEditResult({success:true, message:'Post updated successfully'})
-        setTimeout(()=>{ setEditSlug(null); setForm(EMPTY_FORM); setAutoSlug(true); setEditResult(null) }, 1500)
+        setTimeout(()=>{ setEditSlug(null); setForm(makeEmptyForm()); setAutoSlug(true); setEditResult(null) }, 1500)
       } else { setEditResult({error:addData.error}) }
     } catch(err) { setEditResult({error:'Network error: '+err.message}) }
     finally { setEditLoading(false) }
