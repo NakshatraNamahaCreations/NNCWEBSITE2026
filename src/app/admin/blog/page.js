@@ -130,7 +130,7 @@ export default function AdminBlogPage() {
   if (!authed) {
     return (
       <>
-        <style>{`
+        <style suppressHydrationWarning>{`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
           *{box-sizing:border-box;margin:0;padding:0;}
           body{font-family:'Inter',sans-serif;}
@@ -275,7 +275,7 @@ export default function AdminBlogPage() {
 
   return (
     <>
-      <style>{`
+      <style suppressHydrationWarning>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         *{box-sizing:border-box;margin:0;padding:0;}
         body{font-family:'Inter',sans-serif;background:#F8FAFC;}
