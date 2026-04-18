@@ -1,9 +1,4 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/digital-marketing-agency-in-mumbai/page": "app/digital-marketing-agency-in-mumbai/page.js",
-  "/ecommerce-website-development-company-in-bangalore/page": "app/ecommerce-website-development-company-in-bangalore/page.js",
-  "/website-development-company-in-bangalore/page": "app/website-development-company-in-bangalore/page.js",
-  "/social-media-marketing-agency-bangalore/page": "app/social-media-marketing-agency-bangalore/page.js",
-  "/crm-software-development-company-in-bangalore/page": "app/crm-software-development-company-in-bangalore/page.js",
-  "/seo-services-company-in-bangalore/page": "app/seo-services-company-in-bangalore/page.js"
+  "/admin/blog/page": "app/admin/blog/page.js"
 }

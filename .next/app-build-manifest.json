@@ -1,10 +1,5 @@
 {
   "pages": {
-    "/website-development-company-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/website-development-company-in-mumbai/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -12,120 +7,10 @@
       "static/css/css-src_styles_globals_css.css",
       "static/chunks/app/layout.js"
     ],
-    "/ecommerce-website-development-company/page": [
+    "/admin/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/ecommerce-website-development-company/page.js"
-    ],
-    "/ecommerce-website-development-company-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/ecommerce-website-development-company-in-mumbai/page.js"
-    ],
-    "/ecommerce-website-development-mysuru/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/ecommerce-website-development-mysuru/page.js"
-    ],
-    "/our-team/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/our-team/page.js"
-    ],
-    "/contact-us/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/contact-us/page.js"
-    ],
-    "/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[slug]/page.js"
-    ],
-    "/mobile-app-development-company-in-bangalore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/mobile-app-development-company-in-bangalore/page.js"
-    ],
-    "/terms/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/terms/page.js"
-    ],
-    "/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/page.js"
-    ],
-    "/mobile-app-development-company-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/mobile-app-development-company-in-mumbai/page.js"
-    ],
-    "/android-app-development-company-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/android-app-development-company-in-mumbai/page.js"
-    ],
-    "/react-native-app-development-company-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/react-native-app-development-company-in-mumbai/page.js"
-    ],
-    "/crm-software-development-company-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/crm-software-development-company-in-mumbai/page.js"
-    ],
-    "/digital-marketing-agency-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/digital-marketing-agency-in-mumbai/page.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/social-media-marketing-agency-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/social-media-marketing-agency-mumbai/page.js"
-    ],
-    "/graphic-design-company-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/graphic-design-company-in-mumbai/page.js"
-    ],
-    "/google-ads-agency-in-mumbai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/google-ads-agency-in-mumbai/page.js"
-    ],
-    "/ecommerce-website-development-company-in-bangalore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/ecommerce-website-development-company-in-bangalore/page.js"
-    ],
-    "/website-development-company-in-bangalore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/website-development-company-in-bangalore/page.js"
-    ],
-    "/social-media-marketing-agency-bangalore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/social-media-marketing-agency-bangalore/page.js"
-    ],
-    "/crm-software-development-company-in-bangalore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/crm-software-development-company-in-bangalore/page.js"
-    ],
-    "/seo-services-company-in-bangalore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/seo-services-company-in-bangalore/page.js"
+      "static/chunks/app/admin/blog/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
