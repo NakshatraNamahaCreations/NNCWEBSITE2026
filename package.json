@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "chmod 666 data/blogs.json || true",
     "start": "next start",
     "lint": "next lint"
   },
