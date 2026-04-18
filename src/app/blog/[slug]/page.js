@@ -1,47 +1,48 @@
 import Navbar from '@/components/Navbar'
 import AnimObserver from '@/components/AnimObserver'
 import { SeoKeywords, Footer, WaFloat } from '@/components/Sections'
-import { readPosts } from '@/data/blogStore'
+import { connectDB } from '@/lib/mongodb'
+import Blog from '@/lib/BlogModel'
 import { SITE } from '@/data/siteData'
 import Link from 'next/link'
 
-export async function generateStaticParams() {
-  return readPosts().map(p => ({ slug: p.slug }))
-}
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }) {
-  const post = readPosts().find(p => p.slug === params.slug)
-  if (!post) return { title: 'Blog | NNC Digital' }
-  const description = post.description || `${post.title} practical insights from NNC Digital's in-house team in Bengaluru. Expert guide on ${post.category.toLowerCase()} for businesses in India.`
-  return {
-    title: `${post.title} | NNC Digital Blog`,
-    description,
-    alternates: { canonical: `${SITE.url}/blog/${post.slug}` },
-    openGraph: {
-      title: post.title,
+  try {
+    await connectDB()
+    const post = await Blog.findOne({ slug: params.slug }).lean()
+    if (!post) return { title: 'Blog | NNC Digital' }
+    const description = post.description || `${post.title} practical insights from NNC Digital's in-house team in Bengaluru. Expert guide on ${post.category.toLowerCase()} for businesses in India.`
+    return {
+      title: `${post.title} | NNC Digital Blog`,
       description,
-      type: 'article',
-      publishedTime: post.date,
-      url: `${SITE.url}/blog/${post.slug}`,
-      images: [{ url: SITE.teamPhoto, width: 1200, height: 630, alt: `${post.title} NNC Digital Blog` }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: '@nncbengaluru',
-      title: post.title,
-      description,
-      images: [SITE.teamPhoto],
-    },
+      alternates: { canonical: `${SITE.url}/blog/${post.slug}` },
+      openGraph: {
+        title: post.title,
+        description,
+        type: 'article',
+        publishedTime: post.date,
+        url: `${SITE.url}/blog/${post.slug}`,
+        images: [{ url: SITE.teamPhoto, width: 1200, height: 630, alt: `${post.title} NNC Digital Blog` }],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@nncbengaluru',
+        title: post.title,
+        description,
+        images: [SITE.teamPhoto],
+      },
+    }
+  } catch {
+    return { title: 'Blog | NNC Digital' }
   }
 }
 
-// Generate blog content — uses custom body if available, falls back to template
 function generateContent(post) {
-  // If post has custom body content, split by newlines into paragraphs
   if (post.body && post.body.trim()) {
     return post.body.split('\n').filter(p => p.trim())
   }
-  // If post has a description, use it as the opening paragraph
   const opener = post.description && post.description.trim()
     ? post.description
     : `This is a comprehensive guide on ${post.title.toLowerCase()} from NNC Digital's team in Bengaluru. Our in-house specialists have delivered 565+ projects and bring real, hands-on experience to every topic we cover.`
@@ -54,13 +55,20 @@ function generateContent(post) {
   ]
 }
 
-export default function BlogPostPage({ params }) {
-  const allPosts = readPosts()
-  const post = allPosts.find(p => p.slug === params.slug)
+export default async function BlogPostPage({ params }) {
+  let post = null
+  let related = []
+  try {
+    await connectDB()
+    post = await Blog.findOne({ slug: params.slug }).lean()
+    if (post) {
+      related = await Blog.find({ category: post.category, slug: { $ne: post.slug } }).limit(3).lean()
+    }
+  } catch {}
+
   if (!post) return <div style={{ padding: 80, textAlign: 'center', fontSize: 18, color: '#6B7A99' }}>Blog post not found.</div>
 
   const content = generateContent(post)
-  const related = allPosts.filter(p => p.category === post.category && p.slug !== post.slug).slice(0, 3)
 
   const articleSchema = {
     '@context': 'https://schema.org',

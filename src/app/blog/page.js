@@ -3,7 +3,10 @@ import AnimObserver from '@/components/AnimObserver'
 import { SeoKeywords, Footer, WaFloat } from '@/components/Sections'
 import BlogContent from './BlogContent'
 import { SITE } from '@/data/siteData'
-import { readPosts } from '@/data/blogStore'
+import { connectDB } from '@/lib/mongodb'
+import Blog from '@/lib/BlogModel'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata = {
   title: 'Blog & Insights | Website Development, SEO & Digital Marketing Tips | NNC Digital',
@@ -11,8 +14,18 @@ export const metadata = {
   alternates: { canonical: `${SITE.url}/blog` },
 }
 
-export default function BlogPage() {
-  const posts = readPosts()
+export default async function BlogPage() {
+  let posts = []
+  try {
+    await connectDB()
+    const raw = await Blog.find({}).sort({ date: -1 }).lean()
+    posts = raw.map(p => ({
+      slug: p.slug, title: p.title, category: p.category,
+      date: p.date, readTime: p.readTime,
+      description: p.description || '', body: p.body || '',
+    }))
+  } catch {}
+
   return (
     <>
       <Navbar />

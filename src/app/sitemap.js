@@ -1,9 +1,12 @@
 import { SLUG_MAP, CASE_STUDY_DATA } from '@/data/landingData'
-import { readPosts } from '@/data/blogStore'
+import { connectDB } from '@/lib/mongodb'
+import Blog from '@/lib/BlogModel'
 
 const BASE = 'https://www.nakshatranamahacreations.com'
 
-export default function sitemap() {
+export const dynamic = 'force-dynamic'
+
+export default async function sitemap() {
   const now = new Date().toISOString()
 
   // Core pages
@@ -37,7 +40,12 @@ export default function sitemap() {
   }))
 
   // Blog posts
-  const blogPages = readPosts().map(post => ({
+  let blogPosts = []
+  try {
+    await connectDB()
+    blogPosts = await Blog.find({}, { slug: 1, date: 1 }).lean()
+  } catch {}
+  const blogPages = blogPosts.map(post => ({
     url: `${BASE}/blog/${post.slug}`,
     lastModified: post.date,
     priority: 0.8,

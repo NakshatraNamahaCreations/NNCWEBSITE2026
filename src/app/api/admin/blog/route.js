@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
-import { readPosts, writePosts } from '@/data/blogStore'
+import { connectDB } from '@/lib/mongodb'
+import Blog from '@/lib/BlogModel'
 
 export const dynamic = 'force-dynamic'
 
@@ -25,24 +26,16 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Slug must be lowercase letters, numbers and hyphens only' }, { status: 400 })
     }
 
-    const posts = readPosts()
+    await connectDB()
 
-    if (posts.find(p => p.slug === slug)) {
+    const existing = await Blog.findOne({ slug })
+    if (existing) {
       return NextResponse.json({ error: `Slug "${slug}" already exists` }, { status: 409 })
     }
 
-    const newPost = { slug, title, category, date, readTime }
-    if (description) newPost.description = description
-    if (bodyContent) newPost.body = bodyContent
+    await Blog.create({ slug, title, category, date, readTime, description: description || '', body: bodyContent || '' })
 
-    writePosts([newPost, ...posts])
-
-    return NextResponse.json({
-      success: true,
-      message: `Blog post "${title}" added successfully`,
-      slug,
-      url: `/blog/${slug}`,
-    })
+    return NextResponse.json({ success: true, message: `Blog post "${title}" added successfully`, slug, url: `/blog/${slug}` })
   } catch (err) {
     console.error('Admin blog POST error:', err)
     return NextResponse.json({ error: 'Server error: ' + err.message }, { status: 500 })
@@ -51,16 +44,29 @@ export async function POST(request) {
 
 // GET — list all blog posts
 export async function GET(request) {
-  const { searchParams } = new URL(request.url)
-  const secret = searchParams.get('secret')
+  try {
+    const { searchParams } = new URL(request.url)
+    const secret = searchParams.get('secret')
 
-  if (!auth(secret)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    if (!auth(secret)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const posts = readPosts()
-  return NextResponse.json({ posts, slugs: posts.map(p => p.slug), total: posts.length })
+    await connectDB()
+    const posts = await Blog.find({}).sort({ date: -1 }).lean()
+
+    const mapped = posts.map(p => ({
+      slug: p.slug, title: p.title, category: p.category,
+      date: p.date, readTime: p.readTime,
+      description: p.description || '', body: p.body || '',
+    }))
+
+    return NextResponse.json({ posts: mapped, slugs: mapped.map(p => p.slug), total: mapped.length })
+  } catch (err) {
+    console.error('Admin blog GET error:', err)
+    return NextResponse.json({ error: 'Server error: ' + err.message }, { status: 500 })
+  }
 }
 
-// PUT — update an existing blog post by slug
+// PUT — update an existing blog post
 export async function PUT(request) {
   try {
     const body = await request.json()
@@ -69,16 +75,19 @@ export async function PUT(request) {
     if (!auth(secret)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     if (!originalSlug || !title) return NextResponse.json({ error: 'originalSlug and title are required' }, { status: 400 })
 
-    const posts = readPosts()
-    const idx = posts.findIndex(p => p.slug === originalSlug)
-    if (idx === -1) return NextResponse.json({ error: `Post "${originalSlug}" not found` }, { status: 404 })
+    await connectDB()
 
-    const updated = { slug: slug || originalSlug, title, category, date, readTime }
-    if (description) updated.description = description
-    if (bodyContent) updated.body = bodyContent
+    const post = await Blog.findOne({ slug: originalSlug })
+    if (!post) return NextResponse.json({ error: `Post "${originalSlug}" not found` }, { status: 404 })
 
-    posts[idx] = updated
-    writePosts(posts)
+    post.slug        = slug || originalSlug
+    post.title       = title
+    post.category    = category
+    post.date        = date
+    post.readTime    = readTime
+    post.description = description || ''
+    post.body        = bodyContent || ''
+    await post.save()
 
     return NextResponse.json({ success: true, message: `Post "${title}" updated successfully` })
   } catch (err) {
@@ -87,7 +96,7 @@ export async function PUT(request) {
   }
 }
 
-// DELETE — remove a blog post by slug
+// DELETE — remove a blog post
 export async function DELETE(request) {
   try {
     const body = await request.json()
@@ -96,14 +105,13 @@ export async function DELETE(request) {
     if (!auth(secret)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     if (!slug) return NextResponse.json({ error: 'Slug is required' }, { status: 400 })
 
-    const posts = readPosts()
-    const filtered = posts.filter(p => p.slug !== slug)
+    await connectDB()
 
-    if (filtered.length === posts.length) {
+    const result = await Blog.deleteOne({ slug })
+    if (result.deletedCount === 0) {
       return NextResponse.json({ error: `Slug "${slug}" not found` }, { status: 404 })
     }
 
-    writePosts(filtered)
     return NextResponse.json({ success: true, message: `Blog post "${slug}" deleted successfully` })
   } catch (err) {
     console.error('Admin blog DELETE error:', err)
